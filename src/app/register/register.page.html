@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <!-- <ion-back-button color="light"></ion-back-button> -->
+      <a href="/login"><ion-icon name="arrow-back-outline"></ion-icon></a>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <ion-card>
+    <form #form="ngForm">
+      <ion-list lines="none">
+        <ion-list-header lines="full">
+          Please enter your details
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label position="stacked" for="firstname">
+            First Name
+            <ion-note color="danger">*</ion-note>
+          </ion-label>
+
+          <ion-input ngModel #firstname="ngModel" type="text" id="firstname" name="firstname"
+            placeholder="Enter your first name" clearOnEdit="false" required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked" for="lastname">
+            Last Name
+            <ion-note color="danger">*</ion-note>
+          </ion-label>
+
+          <ion-input ngModel #lastname="ngModel" type="text" id="lastname" name="lastname"
+            placeholder="Enter your last name" clearOnEdit="false" required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked" for="email">
+            Email Address
+            <ion-note color="danger">*</ion-note>
+          </ion-label>
+
+          <ion-input ngModel #email="ngModel" type="text" id="email" name="email"
+            placeholder="Enter your email address" clearOnEdit="false" required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">
+            New Password
+            <ion-note color="danger">*</ion-note>
+          </ion-label>
+
+          <ion-input ngModel #newPass="ngModel" [type]="onShowPassword ? 'password' : 'text'" id="newPass" name="newPass"
+            placeholder="Enter your new password" clearOnEdit="false" required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">
+            Confirm New Password
+            <ion-note color="danger">*</ion-note>
+          </ion-label>
+
+          <ion-input ngModel #confirmNewPass="ngModel" [type]="onShowPassword ? 'password' : 'text'" id="confirmNewPass" name="confirmNewPass"
+            placeholder="Confirm your new password" clearOnEdit="false" required>
+          </ion-input>
+        </ion-item>
+
+        <div class="ion-text-end">
+          <ion-button fill="clear" (click)="onPasswordToggle()">
+            <ion-icon slot="end" [name]="onShowPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+            <ion-label>
+              <ion-note color="primary" *ngIf="onShowPassword">
+                Show Password
+              </ion-note>
+              <ion-note color="primary" *ngIf="!onShowPassword">
+                Hide Password
+              </ion-note>
+            </ion-label>
+          </ion-button>
+        </div>
+      </ion-list>
+    </form>
+  </ion-card>
+
+  <ion-button [disabled]="!form.valid" size="large" expand="block" color="primary" class="ion-padding-horizontal" (click)="onSubmit(form)">
+    <ion-icon slot="end" name="save-outline"></ion-icon>
+    Register
+  </ion-button>
+</ion-content>

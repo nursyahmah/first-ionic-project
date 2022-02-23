@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Update Ticket</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+ </ion-header>
+
+ <ion-content>
+    <ion-card>
+      <form #form="ngForm">
+        <ion-list lines="none">
+          <ion-list-header lines="full">
+            Please update your ticket details
+          </ion-list-header>
+
+          <ion-item>
+            <ion-label position="stacked" for="feedback">
+              Feedback
+              <ion-note color="danger">*</ion-note>
+            </ion-label>
+
+            <ion-textarea ngModel #feedback="ngModel" type="text" id="feedback" name="feedback" rows="10"
+              minlength="10" placeholder="Please enter your updated feedback" clearOnEdit="false" required>
+            </ion-textarea>
+          </ion-item>
+        </ion-list>
+      </form>
+
+    </ion-card>
+
+    <ion-button [disabled]="!form.valid" size="large" expand="block" color="primary" class="ion-padding-horizontal" (click)="onSubmit(form)">
+      <ion-icon slot="end" name="save-outline"></ion-icon>
+      Update
+    </ion-button>
+ </ion-content>

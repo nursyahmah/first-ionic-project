@@ -1,0 +1,149 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <!-- <ion-buttons slot="start">
+      <ion-menu-button color="light" autoHide="false"></ion-menu-button>
+    </ion-buttons> -->
+    <ion-title>Edit Profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <ion-card *ngIf="this.profile_data">
+    <form #form="ngForm">
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label position="stacked" for="firstname">
+            First Name
+            <ion-note color="danger">*</ion-note>
+          </ion-label>
+
+          <ion-input [ngModel]="profile_data.firstname" #firstname="ngModel" type="firstname"
+            id="firstname" name="firstname"
+            placeholder="Please enter your first name"
+            clearOnEdit="false" required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked" for="lastname">
+            Last Name
+            <ion-note color="danger">*</ion-note>
+          </ion-label>
+
+          <ion-input [ngModel]="profile_data.lastname" #lastname="ngModel" type="lastname"
+            id="lastname" name="lastname"
+            placeholder="Please enter your last name"
+            clearOnEdit="false" required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked" for="email">
+            Email
+            <ion-note color="danger">*</ion-note>
+          </ion-label>
+
+          <ion-input [ngModel]="profile_data.email" #email="ngModel" type="email"
+            id="email" name="email"
+            placeholder="Please enter your email address"
+            clearOnEdit="false" required>
+          </ion-input>
+        </ion-item>
+      </ion-list>
+    </form>
+
+    <br>
+    <ion-button [disabled]="!form.valid" size="large" expand="block" color="primary" class="ion-padding-horizontal" (click)="onSubmit(form)">
+      <ion-icon slot="end" name="save-outline"></ion-icon>
+      Update
+    </ion-button>
+    <br>
+  </ion-card>
+
+  <!-- <section class="edit" style="text-align: right; padding: 16px 16px 0px 16px;">
+    <a href="/profile-view">Save</a>
+  </section>
+  <section class="image" style="text-align: center;padding-bottom: 16px;position:relative;">
+    <img src="https://s4.anilist.co/file/anilistcdn/character/large/b167372-o4C808Eb5xmo.jpg" alt="" height="150px" width="150px" style="border-radius: 50%;object-fit: cover;">
+    <ion-button size="small" slot="icon-only" style="position: absolute; bottom: 20%;left: 60%;"><ion-icon name="camera"></ion-icon></ion-button>
+  </section>
+
+  <ion-list lines="full" class="ion-no-margin">
+    <ion-item>
+      <ion-label position="fixed">Name</ion-label>
+      <ion-input placeholder="placeholder" value="Rowan Alexei Peruka"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Age</ion-label>
+      <ion-input placeholder="placeholder" value="18 years old"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Nickname</ion-label>
+      <ion-input placeholder="placeholder" value="Ru, Lex, Grim Reaper"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Address</ion-label>
+      <ion-input placeholder="placeholder" value="Peruka, Macedonia"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">D.O.B</ion-label>
+      <ion-input placeholder="placeholder" value="January 2002"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Siblings</ion-label>
+      <ion-input placeholder="placeholder" value="None"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Bio</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-textarea placeholder="placeholder" value="Who said I’m funny? I’m actually very mean, but everyone thinks I’m just kidding."></ion-textarea>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Interests</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-chip outline color="primary">
+        <ion-icon name="restaurant-outline"></ion-icon>
+        <ion-label>Food</ion-label>
+        <ion-icon name="close-circle"></ion-icon>
+      </ion-chip>
+      <ion-chip outline color="danger">
+        <ion-icon name="eyedrop-outline"></ion-icon>
+        <ion-label>Sword Fight</ion-label>
+        <ion-icon name="close-circle"></ion-icon>
+      </ion-chip>
+      <ion-chip outline color="tertiary">
+        <ion-icon name="logo-yen"></ion-icon>
+        <ion-label>Money</ion-label>
+        <ion-icon name="close-circle"></ion-icon>
+      </ion-chip>
+      <ion-chip outline color="warning">
+        <ion-icon name="diamond-outline"></ion-icon>
+        <ion-label>Jewellery</ion-label>
+        <ion-icon name="close-circle"></ion-icon>
+      </ion-chip>
+      <ion-chip outline color="success">
+        <ion-icon name="airplane-outline"></ion-icon>
+        <ion-label>Travel</ion-label>
+        <ion-icon name="close-circle"></ion-icon>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card> -->
+</ion-content>
+
+<style>
+  a{
+    text-decoration: none;
+  }
+  </style>

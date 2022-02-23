@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Ticket Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+ </ion-header>
+
+ <ion-content>
+  <ion-card *ngIf="this.ticket_details">
+    <ion-list lines="none">
+      <ion-list-header lines="full">
+        Ticket # Details
+      </ion-list-header>
+
+      <ion-item-group>
+        <ion-item-divider>
+          <ion-label>
+            Title
+          </ion-label>
+        </ion-item-divider>
+
+        <ion-item>
+          <ion-label>
+            {{ticket_details.title}}
+          </ion-label>
+        </ion-item>
+
+        <ion-item-divider>
+          <ion-label>
+            Contents
+          </ion-label>
+        </ion-item-divider>
+
+        <ion-item>
+          <ion-label>
+            {{ticket_details.feedback}}
+          </ion-label>
+        </ion-item>
+
+        <ion-item-divider>
+          <ion-label>
+            Email Address
+          </ion-label>
+        </ion-item-divider>
+
+        <ion-item>
+          <ion-label>
+            {{ticket_details.email}}
+          </ion-label>
+        </ion-item>
+
+        <ion-item-divider>
+          <ion-label>
+            Created By
+          </ion-label>
+        </ion-item-divider>
+
+        <ion-item>
+          <ion-label>
+            {{ticket_details.name}}
+          </ion-label>
+        </ion-item>
+
+        <ion-item-divider>
+          <ion-label>
+            Created Date
+          </ion-label>
+        </ion-item-divider>
+
+        <ion-item>
+          <ion-label>
+            {{ticket_details.date_created}}
+          </ion-label>
+        </ion-item>
+
+        <ion-item-divider>
+          <ion-label>
+            Status
+          </ion-label>
+        </ion-item-divider>
+
+        <ion-item>
+          <ion-label>
+            Active
+          </ion-label>
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
+  </ion-card>
+
+  <ion-button size="large" expand="block" color="primary" class="ion-padding-horizontal" (click)="goToTicketUpdate()">
+    <ion-icon slot="end" name="save-outline"></ion-icon>
+    Update
+  </ion-button>
+  <br>
+  <ion-button size="large" expand="block" color="danger" class="ion-padding-horizontal" (click)="deleteTicket()">
+    <ion-icon slot="end" name="trash-outline"></ion-icon>
+    Delete
+  </ion-button>
+ </ion-content>
+

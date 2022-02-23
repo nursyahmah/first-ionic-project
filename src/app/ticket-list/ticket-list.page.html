@@ -1,0 +1,92 @@
+<!-- <ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Ticket List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <ion-button color="success" size="small" href="/ticket-new">New Order</ion-button>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content> -->
+
+<!-- <ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>My Tickets</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+ </ion-header>
+
+ <ion-content color="dark">
+  <ion-card (click)="goToTicket(1)">
+    <ion-item lines="none" detail>
+      <ion-label>
+        <h2>Ticket Title</h2>
+        <h3>Ticket No #</h3>
+        <p>Created Date</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+ </ion-content> -->
+
+ <ion-footer>
+  <ion-toolbar>
+    <ion-button size="large" expand="block" color="dark" class="ion-padding-horizontal" (click)="newTicket()">
+      <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+      New Ticket
+    </ion-button>
+  </ion-toolbar>
+ </ion-footer>
+
+ <ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>My Tickets</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+ </ion-header>
+
+ <ion-content>
+  <div *ngIf="this.tickets_list">
+    <div *ngFor="let tl of tickets_list">
+      <ion-card (click)="goToTicket(tl.ticket_id)">
+        <ion-item lines="none" detail>
+          <ion-label>
+            <h2>{{tl.title}}</h2>
+            <h3>Ticket No #{{tl.ticket_id}}</h3>
+            <p>{{tl.created_date}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-card>
+    </div>
+  </div>
+
+  <div *ngIf="!this.tickets_list" class="vertical-align">
+    <h3>No Tickets Found</h3>
+  </div>
+ </ion-content>
+
+ <ion-footer>
+  <ion-toolbar>
+    <ion-button size="large" expand="block" color="primary" class="ion-padding-horizontal" (click)="newTicket()">
+      <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+      New Ticket
+    </ion-button>
+  </ion-toolbar>
+ </ion-footer>
+

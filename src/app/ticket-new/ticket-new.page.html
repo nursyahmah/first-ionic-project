@@ -1,0 +1,124 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>New Ticket</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+
+    <form #form="ngForm">
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Order Product ID</ion-label>
+          <ion-input ngModel #Order_Product_ID="ngModel" type="text" id="Order_Product_ID" name="Order_Product_ID"  clearOnEdit="false"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Order ID</ion-label>
+          <ion-input ngModel #Order_ID="ngModel" type="text" id="Order_ID" name="Order_ID"clearOnEdit="false"type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Item Name</ion-label>
+          <ion-input ngModel #Item_Name="ngModel"type="text" id="Item_Name" name="Item_Name" clearOnEdit="false"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Normal Price</ion-label>
+          <ion-input ngModel #Normal_Price="ngModel" type="text" id="Normal_Price" name="Normal_Price" clearOnEdit="false"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Promotion Price</ion-label>
+          <ion-input ngModel #Promotion_Price="ngModel" type="text" id="Promotion_Price" name="Promotion_Price" clearOnEdit="false"></ion-input>
+        </ion-item>
+      </ion-list>
+    </form>
+
+  <ion-button type="button" [disabled]="!form.valid" (click)="onSubmit(form)" color="success" shape="full" expand="block">Submit</ion-button>
+</ion-content>
+
+
+
+ <!-- <ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>New Ticket</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+ </ion-header>
+
+ <ion-content>
+    <ion-card class="">
+      <form #form="ngForm">
+        <ion-list lines="none">
+          <ion-item>
+            <ion-label position="stacked" for="firstname">
+              First Name
+              <ion-note color="danger">*</ion-note>
+            </ion-label>
+
+            <ion-input ngModel #firstname="ngModel" type="firstname"
+              id="firstname" name="firstname"
+              placeholder="Please enter your first name"
+              clearOnEdit="false" required>
+            </ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked" for="lastname">
+              Last Name
+              <ion-note color="danger">*</ion-note>
+            </ion-label>
+
+            <ion-input ngModel #lastname="ngModel" type="lastname"
+              id="lastname" name="lastname"
+              placeholder="Please enter your last name"
+              clearOnEdit="false" required>
+            </ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked" for="email">
+              Email
+              <ion-note color="danger">*</ion-note>
+            </ion-label>
+
+            <ion-input ngModel #email="ngModel" type="email"
+              id="email" name="email"
+              placeholder="Please enter your email address"
+              clearOnEdit="false" required>
+            </ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked" for="title">
+              Ticket Title
+              <ion-note color="danger">*</ion-note>
+            </ion-label>
+
+            <ion-input ngModel #title="ngModel" type="text" id="title" name="title"
+              placeholder="Please enter your ticket title" clearOnEdit="false" required>
+            </ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked" for="feedback">
+              Ticket Feedback
+              <ion-note color="danger">*</ion-note>
+            </ion-label>
+
+            <ion-textarea ngModel #feedback="ngModel" type="text" id="feedback" name="feedback" rows="10"
+              minlength="10" placeholder="Please enter your ticket feedback" clearOnEdit="false" required>
+            </ion-textarea>
+          </ion-item>
+        </ion-list>
+      </form>
+    </ion-card>
+
+    <ion-button [disabled]="!form.valid" size="large" expand="block" color="primary" class="ion-padding-horizontal" (click)="onSubmit(form)">
+      <ion-icon slot="end" name="save-outline"></ion-icon>
+      Create
+    </ion-button>
+ </ion-content> -->
